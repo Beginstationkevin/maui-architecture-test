@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MauiTest.Models
 {
-    internal class JsonContainer
+    internal class SuperHeroJsonContainer
     {
-        public SuperHero[] data { get; set; }
+        public SuperHeroModel[] data { get; set; }
         public bool succes { get; set; }
         public string message { get; set; }
     }

@@ -1,7 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MauiTest.Models;
-using MauiTest.Services;
+using MauiTest.Services.Navigation;
+using MauiTest.Services.Settings;
+using MauiTest.Services.SuperHero;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,21 +12,15 @@ using System.Threading.Tasks;
 
 namespace MauiTest.ViewModels
 {
-    public partial class SuperHeroViewModel : ObservableObject
+    public partial class SuperHeroViewModel : ViewModelBase
     {
         [ObservableProperty]
-        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
-        bool isBusy;
-        [ObservableProperty]
-        string title;
-        [ObservableProperty]
-        IEnumerable<SuperHero> superHeroes;
+        IEnumerable<SuperHeroModel> superHeroes;
 
         ISuperHeroService Service;
 
-        public bool IsNotBusy => !IsBusy;
 
-        public SuperHeroViewModel(ISuperHeroService superHeroService)
+        public SuperHeroViewModel(ISuperHeroService superHeroService, INavigationService navigationService, ISettingsService settingsService) : base(navigationService, settingsService)
         {
             Title = "SuperHero";
             Service = superHeroService;
@@ -34,6 +30,11 @@ namespace MauiTest.ViewModels
         async Task Get() 
         { 
             SuperHeroes = await Service.GetSuperHeroes();
+        }
+
+        [RelayCommand]
+        async Task GoToAbout() {
+            await NavigationService.NavigateToAsync("About");
         }
     }
 }

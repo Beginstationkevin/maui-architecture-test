@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MauiTest.Models
+namespace MauiTest.Validations
 {
-    public class SuperPower
+    public interface IValidity
     {
-        public int id;
-        public string name { get; set; }
+        bool IsValid { get; }
     }
 }

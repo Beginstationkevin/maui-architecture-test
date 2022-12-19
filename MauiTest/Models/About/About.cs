@@ -1,4 +1,4 @@
-﻿namespace MauiTest.Models;
+﻿namespace MauiTest.Models.About;
 
 internal class About
 {

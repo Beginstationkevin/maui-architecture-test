@@ -1,11 +1,16 @@
-﻿namespace MauiTest;
+﻿using MauiTest.Services.Navigation;
+
+namespace MauiTest;
 
 public partial class App : Application
 {
-	public App()
+	private readonly INavigationService NavigationService;
+
+    public App(INavigationService navigationService)
 	{
+		NavigationService = navigationService;
 		InitializeComponent();
 
-		MainPage = new AppShell();
+		MainPage = new AppShell(NavigationService);
 	}
 }

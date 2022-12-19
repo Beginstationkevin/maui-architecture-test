@@ -6,6 +6,7 @@
              Title="{Binding Title}">
     <VerticalStackLayout>
 		<Button Command="{ Binding GetCommand }" Text="Add SuperHero"/>
+		<Button Command="{ Binding GoToAboutCommand }" Text="About page"/>
 		<CollectionView ItemsSource="{Binding SuperHeroes}" ItemsLayout="VerticalGrid">
 			<CollectionView.ItemTemplate>
 				<DataTemplate>

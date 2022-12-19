@@ -11,14 +11,5 @@
             Title="SuperHero"
             ContentTemplate="{DataTemplate views:SuperHeroView}"
             Route="superhero" />
-		<ShellContent
-            Title="Notes"
-            ContentTemplate="{DataTemplate views:AllNotesPage}"
-            Route="notes" />
-
-		<ShellContent
-            Title="About"
-            ContentTemplate="{DataTemplate views:AboutPage}"
-            Route="about" />
 	</TabBar>
 </Shell>
