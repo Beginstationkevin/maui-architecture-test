@@ -12,12 +12,6 @@ namespace MauiTest.Services.Navigation
             
         }
 
-        public async Task InitializeAsync() { return; } /*=>
-        NavigateToAsync(
-            string.IsNullOrEmpty(_settingsService.AuthAccessToken)
-                ? "//Login"
-                : "//Main/Catalog");*/
-
         public Task NavigateToAsync(string route, IDictionary<string, object> routeParameters = null)
         {
             var shellNavigation = new ShellNavigationState(route);

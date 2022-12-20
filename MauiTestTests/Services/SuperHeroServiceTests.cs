@@ -10,7 +10,7 @@ namespace MauiTestTests.Services
     public class SuperHeroServiceTests
     {
         [Fact]
-        public async Task GetFakeCatalogTest()
+        public async Task GetFakeSuperHeroTest()
         {
             SuperHeroMockService catalogMockService = new SuperHeroMockService();
             var catalog = await catalogMockService.GetSuperHeroes();

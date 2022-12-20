@@ -22,7 +22,7 @@ namespace MauiTest.Services.SuperHero
             try
             {
                 Client = new HttpClient { BaseAddress = new Uri(SettingsService.ApiBaseUrl) };
-                Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", settingsService.AuthKey);
+                Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", SettingsService.AuthKey);
             }
             catch
             {

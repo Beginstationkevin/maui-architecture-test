@@ -28,8 +28,6 @@ public static class MauiProgram
         builder.Services.AddSingleton<INavigationService, NavigationService>();
         builder.Services.AddSingleton<ISettingsService, SettingsService>();
 
-
-
         return builder.Build();
 	}
 }

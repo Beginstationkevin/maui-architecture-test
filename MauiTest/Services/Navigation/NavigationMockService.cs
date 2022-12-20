@@ -8,11 +8,6 @@ namespace MauiTest.Services.Navigation
 {
     public class NavigationMockService : INavigationService
     {
-        public Task InitializeAsync()
-        {
-            return Task.CompletedTask;
-        }
-
         public Task NavigateToAsync(string route, IDictionary<string, object>? routeParameters = null)
         {
             return Task.CompletedTask;
